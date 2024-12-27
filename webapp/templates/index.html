@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Schedule </title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to your schedule</h1>
+    <div class="task-grid">
+        {% for day, tasks in calendar.items() %}
+        <div class="task-square {% if day == today_day %}today{% endif %}">
+                <div class="day">{{ day }}</div>
+                <ul class="task-list">
+                    {% for task in tasks %}
+                        <li class="task-item">
+                            <strong>{{ task['name'] }}</strong>
+
+                            <!-- Delete button for each task -->
+                            <form action="{{ url_for('delete_task', task_id=task['id']) }}" method="post" style="display:inline;">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <p>No tasks available in the next 7 days.</p>
+        {% endfor %}
+        
+    </div>
+    <!-- Add button to add a new task for the day -->
+    <a href="{{ url_for('add_task', date=today_date) }}" method="get" class="add-button">Add Task</a>
+</body>
+</html>

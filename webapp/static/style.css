@@ -1,0 +1,118 @@
+
+.add_button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline-block */
+    font-size: 16px; /* Set font size */
+    margin: 4px 2px; /* Add some margin */
+    border-radius: 12px; /* Add rounded edges */
+}
+
+
+.button {
+    background-color: #af4caf; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline-block */
+    font-size: 16px; /* Set font size */
+    margin: 4px 2px; /* Add some margin */
+    cursor:grab;
+    border-radius: 12px; /* Add rounded edges */
+}
+
+
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for the grid */
+}
+
+/* Styling for each task square */
+.task-square {
+    background-color: #ffffff; /* White background for each task square */
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.task-square:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the day of the week */
+.task-square .day {
+    font-size: 24px; /* Large font size for the day */
+    font-weight: bold;
+    color: #00796b; /* Teal color for day of the week */
+    margin-bottom: 10px;
+}
+
+/* Highlight today's square */
+.task-square.today {
+    background-color: #e3f2fd; /* Light blue for today */
+}
+
+/* Styling for task list */
+.task-list {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.task-list .task-item {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative; /* For positioning the delete button */
+    margin-bottom: 10px;
+}
+
+.task-list .task-item:last-child {
+    border-bottom: none;
+}
+
+/* Delete button styling */
+.delete-button {
+    background-color: #ff5722; /* Bright orange-red color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    float: right; /* Align to the right of the task item */
+}
+
+.delete-button:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+}
+
+/* Add button styling */
+.add-button {
+    background-color: #4caf50; /* Green background for add button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.add-button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}

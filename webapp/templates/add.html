@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Schedule</title>
+</head>
+<body>
+    <h1>Add new task/reminder</h1>
+
+    <!-- HTML Form -->
+    <form action="/submit_form" method="post">
+        <!-- Input field for text -->
+        <label for="name">Name of task:</label>
+        <input type="text" id="name" name="name" placeholder="Name of task" required>
+        <br><br>
+
+        <!-- Date input -->
+        <label for="doi">Date of Interest:</label>
+        <input type="date" id="doi" name="doi" value="{{ default_date }}" required>
+        <br><br>
+
+        <!-- Input field for email -->
+        <label for="repeats">Repeats every (days, 366 for anual, 367 for monthly):</label>
+        <input type="number" id="repeats" name="repeats" placeholder="Repeats every (days)" required>
+        <br><br>
+        
+        <!-- Radio input -->
+        <label>Type:</label>
+        <input type="radio" id="task" name="type" value="task" required>
+        <label for="task">Task</label>
+        <input type="radio" id="reminder" name="type" value="reminder">
+        <label for="reminder">Reminder</label>
+        <br><br>
+
+        <!-- Submit button to send the form -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
